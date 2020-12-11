@@ -16,11 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('bbbbb');
-Route::get('testMerge');
-Route::get('mergeBranch');
-Route::get('mergeBranch');
-Route::resource('anhmv', 'testApi');
-Route::get('anhmsdssds');
-Route::get('1');
-Route::get('12s2s5sd465fgh');
