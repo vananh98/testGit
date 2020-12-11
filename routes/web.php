@@ -18,9 +18,5 @@ Route::get('/', function () {
 });
 Route::get('bbbbb');
 Route::get('testMerge');
-<<<<<<< HEAD
 Route::get('mergeBranch');
-Route::get('testCommitLog');
-=======
-Route::get('mergeBranch');Route::get('mergeBranch');
->>>>>>> 238556cf6f727340b35a7f7fd3c0529ca92bd27d
+Route::get('mergeBranch');
