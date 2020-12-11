@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 Route::get('bbbbb');
 Route::get('testMerge');
-Route::get('mergeBranch');Route::get('mergeBranch');
+Route::get('mergeBranch');
+Route::get('mergeBranch');
