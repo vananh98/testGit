@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class testApi extends Controller
 {
@@ -15,6 +16,8 @@ class testApi extends Controller
     public function index()
     {
         //
+        $user = User::all();
+        return response()->json($user);
     }
 
     /**
@@ -25,7 +28,14 @@ class testApi extends Controller
     public function create()
     {
         //
-        
+        $cre = User::create([
+            'name' => 'anhmv',
+            'email' => 'anhcdcn98@gmail.com',
+            'password' => Hash::make('anhmv'),
+            'id_level' => 1,
+            'status' => 1,
+        ]);
+        return response()->json($cre);
     }
 
     /**
@@ -48,6 +58,7 @@ class testApi extends Controller
     public function show($id)
     {
         //
+        return response()->json(User::find($id));
     }
 
     /**
@@ -58,7 +69,6 @@ class testApi extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -71,6 +81,17 @@ class testApi extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = User::updateOrInsert(
+            ['id' => 7],
+            [
+                'name' => 'anhmv98',
+                'email' => 'anhcdcn10283@gmail.com',
+                'password' => Hash::make('anhmv'),
+                'id_level' => 1,
+                'status' => 1,
+            ]
+        );
+        return response()->json($user);
     }
 
     /**
@@ -81,6 +102,7 @@ class testApi extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return "oke";
     }
 }
