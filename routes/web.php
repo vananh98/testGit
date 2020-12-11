@@ -21,4 +21,9 @@ Route::get('testMerge');
 Route::get('mergeBranch');
 Route::get('mergeBranch');
 Route::resource('anhmv', 'testApi');
+<<<<<<< Updated upstream
 Route::get('anhmsdssds');
+=======
+Route::get('1');
+Route::get('12s2s5sd465fgh');
+>>>>>>> Stashed changes
