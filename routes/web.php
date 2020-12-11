@@ -21,6 +21,4 @@ Route::get('testMerge');
 Route::get('mergeBranch');
 Route::get('mergeBranch');
 Route::resource('anhmv', 'testApi');
-Route::get('anhmv2');
-Route::get('anhmv');
-Route::get('testStash');
+
