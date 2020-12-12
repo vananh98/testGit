@@ -16,8 +16,8 @@ class testApi extends Controller
     public function index()
     {
         //
-        $user = User::all();
-        return response()->json($user);
+        $users = User::select('id', 'fullname', 'email')->get();
+        return response()->json($users);
     }
 
     /**
@@ -82,16 +82,19 @@ class testApi extends Controller
     {
         //
         $user = User::updateOrInsert(
-            ['id' => 7],
+            ['id' => $id],
             [
-                'name' => 'anhmv98',
-                'email' => 'anhcdcn10283@gmail.com',
-                'password' => Hash::make('anhmv'),
-                'id_level' => 1,
-                'status' => 1,
+                'fullname' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->pass),
+                'status' => 2,
             ]
         );
-        return response()->json($user);
+        $user = User::find($id);
+        return response()->json([
+            'message' => 'success',
+            'data' => $user
+        ], 200);
     }
 
     /**
