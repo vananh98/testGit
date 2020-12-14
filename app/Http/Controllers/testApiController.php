@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller as Controller;
 class testApiController extends Controller
 {
     //
@@ -18,13 +18,13 @@ class testApiController extends Controller
     }
     public function sendError($error, $errorMessage = [], $code = 404)
     {
-        $response = [
+        $error = [
             'success' => false,
             'message' => $error,
         ];
         if (!empty($errorMessage)) {
-            $respone['data'] = $errorMessage;
+            $error['data'] = $errorMessage;
         }
-        return response()->json($respone, $code);
+        return response()->json($error, $code);
     }
 }
