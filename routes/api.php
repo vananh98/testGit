@@ -21,4 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/get-all', function () {
     return response()->json('hihi');
 });
-Route::resource('users', 'testApi');
+Route::resource('users', 'api\UserController');
