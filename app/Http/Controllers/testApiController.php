@@ -18,13 +18,13 @@ class testApiController extends Controller
     }
     public function sendError($error, $errorMessage = [], $code = 404)
     {
-        $error = [
+        $respone = [
             'success' => false,
             'message' => $error,
         ];
         if (!empty($errorMessage)) {
-            $error['data'] = $errorMessage;
+            $respone['data'] = $errorMessage;
         }
-        return response()->json($error, $code);
+        return response()->json($respone, $code);
     }
 }
