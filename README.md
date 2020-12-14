@@ -1,5 +1,5 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-<p>after clone from github. open terminal write: compooser install</p>
+<p>after clone from github. open terminal write: composer install</p>
 <p>after clone from github. open terminal write: copy .env.example .env</p>
 <p>after clone from github. open terminal write: php artisan key:genarate</p>
 <p>gget file laravel.sql in folder database to install mysqli.</p>
