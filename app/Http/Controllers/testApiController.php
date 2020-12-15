@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as Controller;
+
 class testApiController extends Controller
 {
     //
@@ -12,7 +12,7 @@ class testApiController extends Controller
         $respone = [
             'success' => true,
             'data' => $resut,
-            'message' => $mess
+            'message' => $mess,
         ];
         return response()->json($respone, 200);
     }

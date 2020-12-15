@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Controllers\testApiController as testApiController;
 use App\User;
-use Illuminate\Auth\Events\Validated;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Validator;
-use Illuminate\Support\Facades\Validator as FacadesValidator;
-use Illuminate\Validation\Validator as ValidationValidator;
 
 class UserController extends testApiController
 {
@@ -22,7 +18,7 @@ class UserController extends testApiController
     public function index()
     {
         //
-        $resoult = User::select('id', 'fullname')->get();
+        $resoult = User::select('id','fullname')->get();
         if (empty($resoult)) {
             $error = "Chưa có User";
             return $this->sendError($error);
@@ -39,7 +35,7 @@ class UserController extends testApiController
     {
         //
         $mess = "chưa tạo view";
-        return  $this->sendError($mess, "dùng x-wwww-form-unlencorded ở POSTMAN");
+        return $this->sendError($mess, "dùng x-wwww-form-unlencorded ở POSTMAN");
     }
 
     /**
@@ -66,8 +62,8 @@ class UserController extends testApiController
             'password' => Hash::make($request->pass),
             'status' => 1, // int
             'employee_id' => 1, // int
-            'created_by' => 1,  // int
-            'updated_by' => 1 // int
+            'created_by' => 1, // int
+            'updated_by' => 1, // int
         ]);
         return $this->sendResponse($user, "success create");
     }
@@ -119,7 +115,7 @@ class UserController extends testApiController
         $validate = Validator::make(
             $request->all(),
             [
-                'name' => 'required'
+                'name' => 'required',
             ]
         );
         if ($validate->fails()) {
